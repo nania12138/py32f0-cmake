@@ -38,13 +38,13 @@ set(CMAKE_C_STANDARD 11)
 project(py32-cmake C CXX ASM)
 
 # override options
-set(ENABLE_HAL_DRIVER ON CACHE BOOL "Enable HAL driver")
-set(ENABLE_LL_DRIVER OFF CACHE BOOL "Enable LL driver")
+set(ENABLE_HAL_DRIVER OFF CACHE BOOL "Enable HAL driver")
+set(ENABLE_LL_DRIVER ON CACHE BOOL "Enable LL driver")
 set(ENABLE_SYSTEM_XXX_C ON CACHE BOOL "Enable system_XXX.c")
 set(ENABLE_STARTUP_FILE ON CACHE BOOL "Enable startup file")
 set(ENABLE_LD_SCRIPT ON CACHE BOOL "Enable linker script")
 set(ENABLE_DEBUG_DEFINE ON CACHE BOOL "Enable debug define")
-set(MCU_MODEL "PY32F030x6" CACHE STRING "MCU model, like PY32F030x6")
+set(MCU_MODEL "PY32F002Ax5" CACHE STRING "MCU model, like PY32F030x6")
 add_subdirectory(Drivers)
 
 set(AUTO_GENERATE_PYOCD_YAML ON)
