@@ -38,8 +38,8 @@ set(CMAKE_C_STANDARD 11)
 project(py32-cmake C CXX ASM)
 
 # override options
-set(ENABLE_HAL_DRIVER OFF CACHE BOOL "Enable HAL driver")
-set(ENABLE_LL_DRIVER ON CACHE BOOL "Enable LL driver")
+set(ENABLE_HAL_DRIVER ON CACHE BOOL "Enable HAL driver")
+set(ENABLE_LL_DRIVER OFF CACHE BOOL "Enable LL driver")
 set(ENABLE_SYSTEM_XXX_C ON CACHE BOOL "Enable system_XXX.c")
 set(ENABLE_STARTUP_FILE ON CACHE BOOL "Enable startup file")
 set(ENABLE_LD_SCRIPT ON CACHE BOOL "Enable linker script")
@@ -53,14 +53,14 @@ add_executable(${PROJECT_NAME}.elf)
 
 target_link_libraries(${PROJECT_NAME}.elf PRIVATE drivers)
 
-file(GLOB SOURCES ${CMAKE_CURRENT_LIST_DIR}/App/*.c)
+file(GLOB SOURCES ${CMAKE_CURRENT_LIST_DIR}/Core/Src/*.c)
 target_sources(${PROJECT_NAME}.elf
     PRIVATE
     ${SOURCES}
 )
 target_include_directories(${PROJECT_NAME}.elf
     PRIVATE
-    ${CMAKE_CURRENT_LIST_DIR}/App
+    ${CMAKE_CURRENT_LIST_DIR}/Core/Inc
 )
 
 
